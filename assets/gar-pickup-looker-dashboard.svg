@@ -18,9 +18,9 @@
 <rect x="530" y="388" width="500" height="205" rx="10" fill="#fff" stroke="#dfe7ef"/>
 <text x="550" y="419" font-family="Arial,sans-serif" font-size="16" font-weight="850" fill="#172f8f">Pickup Growth Quality</text>
 <text x="550" y="443" font-family="Arial,sans-serif" font-size="10" fill="#718096">Reported cannibalization and incremental outcomes</text>
-<rect x="550" y="465" width="450" height="35" rx="6" fill="#fff0f1"/><rect x="550" y="465" width="385.1" height="35" rx="6" fill="#db6571"/><text x="565" y="487" font-family="Arial,sans-serif" font-size="11" font-weight="900" fill="#fff">85.58% CANNIBALIZATION</text>
-<rect x="550" y="511" width="450" height="35" rx="6" fill="#eaf8ef"/><rect x="550" y="511" width="59.9" height="35" rx="6" fill="#209e65"/><text x="620" y="533" font-family="Arial,sans-serif" font-size="11" font-weight="900" fill="#176b4a">13.30% INCREMENTAL CONTRIBUTION</text>
-<text x="550" y="572" font-family="Arial,sans-serif" font-size="11" font-weight="850" fill="#176b4a">Incremental ADS · Rp 421K / store</text>
+<rect x="550" y="465" width="216" height="76" rx="8" fill="#fff0f1" stroke="#f2d7da"/><text x="566" y="488" font-family="Arial,sans-serif" font-size="9" font-weight="850" fill="#a85b64">CANNIBALIZATION RATE</text><text x="566" y="526" font-family="Arial,sans-serif" font-size="31" font-weight="900" fill="#c94e5d">85.58%</text>
+<rect x="780" y="465" width="220" height="76" rx="8" fill="#eaf8ef" stroke="#d1ebdc"/><text x="796" y="488" font-family="Arial,sans-serif" font-size="9" font-weight="850" fill="#48846a">INCREMENTAL CONTRIBUTION</text><text x="796" y="526" font-family="Arial,sans-serif" font-size="31" font-weight="900" fill="#16834f">13.30%</text>
+<text x="550" y="572" font-family="Arial,sans-serif" font-size="11" font-weight="850" fill="#176b4a">Incremental ADS · Rp 421K</text>
 <rect x="1045" y="388" width="520" height="205" rx="10" fill="#fff" stroke="#dfe7ef"/>
 <text x="1065" y="419" font-family="Arial,sans-serif" font-size="16" font-weight="850" fill="#172f8f">Same-Store ADS Growth</text>
 <text x="1065" y="443" font-family="Arial,sans-serif" font-size="10" fill="#718096">2025 vs 2026 · 143 matched stores</text>
