@@ -91,6 +91,56 @@ body{font-size:16px}.navlinks{font-size:13px}.hero .eyebrow,.section-label{font-
  .pickup-code-head{align-items:flex-start;flex-direction:column}
  .pickup-code{font-size:9px}
  .modal-box.has-pickup{width:100%;max-height:92vh}
+}/* Pickup project compact spacing and clean dashboard presentation */
+#pickupCaseStudy{margin-top:18px}
+#pickupCaseStudy .pickup-section{padding:0!important;margin:15px 0 0!important}
+#pickupCaseStudy .pickup-section:first-of-type{margin-top:0!important}
+#pickupCaseStudy .pickup-section h4{margin:5px 0 7px;font-size:17px}
+#pickupCaseStudy .pickup-section>p{margin:0;line-height:1.65}
+#pickupCaseStudy .pickup-problem{margin-top:9px;padding:10px 13px;gap:11px}
+.pickup-story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:10px}
+.pickup-story-grid>div{border:1px solid #e3eaf1;background:#f8fafc;padding:11px 12px;border-radius:8px}
+.pickup-story-grid b{font-size:11px;color:#173452}
+.pickup-story-grid p{font-size:10px;line-height:1.55;color:#718096;margin:4px 0 0}
+.pickup-formula-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.pickup-formula-grid>div{padding:10px 12px;border:1px solid #e4eaf1;background:#f8fafc;border-radius:8px}
+.pickup-formula-grid b{display:block;font-size:10px;color:#173452}
+.pickup-formula-grid code{display:block;margin-top:5px;padding:6px 7px;background:#eaf1f7;border-radius:5px;color:#087f98;font-size:9px;white-space:normal;overflow-wrap:anywhere}
+.pickup-status-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:9px}
+.pickup-status-panels>div{padding:10px 12px;border-radius:8px;background:#f7f9fc;border:1px solid #e1eaf1}
+.pickup-status-panels b{display:block;font-size:10px;color:#173452}
+.pickup-status-panels ul{padding-left:15px;margin:5px 0 0}
+.pickup-status-panels li{font-size:9px;line-height:1.5;color:#718096;margin:2px 0}
+.pickup-status-panels li strong{color:#344b65}
+.pickup-status-panels p{font-size:9px;color:#718096;line-height:1.5;margin:6px 0 0}
+.pickup-status-panels code{display:block;margin-top:6px;padding:7px;background:#eaf1f7;color:#087f98;border-radius:5px;font-size:9px;white-space:normal;overflow-wrap:anywhere}
+.pickup-code-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:9px 12px;background:#edf3f8;border-radius:8px 8px 0 0}
+.pickup-code-head b{display:block;font-size:10px;color:#173452}
+.pickup-code-head span{display:block;font-size:9px;color:#7b8a9b;margin-top:2px}
+.pickup-code-head a{font-size:10px;font-weight:850;color:#078ba5;white-space:nowrap}
+.pickup-code{margin:0;padding:11px;background:#10243f;color:#d8e9f4;border-radius:0 0 8px 8px;overflow:auto;font-size:9px;line-height:1.55;white-space:pre;max-height:170px}
+.pickup-code code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.pickup-dashboard-preview{margin-top:10px;border:1px solid #dfe7ef;border-radius:9px;overflow:hidden;background:#f5f8fc}
+.pickup-dashboard-preview button{position:relative;display:block;width:100%;border:0;padding:0;background:transparent}
+.pickup-dashboard-preview img{display:block;width:100%;height:auto}
+.pickup-dashboard-preview button span{position:absolute;right:10px;bottom:10px;background:#10264ade;color:#fff;padding:6px 9px;border-radius:6px;font-size:9px;font-weight:850}
+.pickup-impact-list{display:grid;gap:7px;margin-top:10px}
+.pickup-impact-list>div{display:grid;grid-template-columns:190px 210px 1fr;gap:10px;align-items:center;padding:10px 12px;border:1px solid #e4eaf1;border-radius:8px;background:#fff}
+.pickup-impact-list b{font-size:10px;color:#173452}
+.pickup-impact-list strong{font-size:15px;color:#078da7}
+.pickup-impact-list span{font-size:9px;line-height:1.5;color:#718096}
+.pickup-impact-statement{margin-top:10px;padding:11px 13px;border-left:4px solid #20a36b;border-radius:7px;background:#eff9f3}
+.pickup-impact-statement b{font-size:10px;color:#166c49}
+.pickup-impact-statement p{margin:4px 0 0;font-size:10px;line-height:1.55;color:#4c6c5c}
+.modal-box.has-pickup{width:min(1120px,100%);max-height:92vh}
+@media(min-width:721px){#pickupCaseStudy .pickup-section>p{font-size:12px}.pickup-story-grid p,.pickup-status-panels li,.pickup-impact-list span{font-size:10px}}
+@media(max-width:700px){
+ #pickupCaseStudy .pickup-section{margin:13px 0 0!important}
+ .pickup-story-grid,.pickup-formula-grid,.pickup-status-panels{grid-template-columns:1fr}
+ .pickup-code-head{align-items:flex-start;flex-direction:column}
+ .pickup-code{font-size:8px}
+ .pickup-impact-list>div{grid-template-columns:1fr;gap:3px}
+ .modal-box.has-pickup{width:100%;max-height:92vh}
 }</style>
 </head>
 <body>
@@ -101,7 +151,7 @@ body{font-size:16px}.navlinks{font-size:13px}.hero .eyebrow,.section-label{font-
 <section id="expertise" style="background:white"><div class="container"><div class="section-head"><div class="section-label">02 / Expertise</div><h2>Skills &amp; Capabilities</h2><p>A combination of technical tools and business competencies developed through practical work experience.</p></div><div class="skills"><article class="skill-card"><h3>Data Analytics</h3><p>Data extraction, data cleaning, performance analysis, trend analysis, KPI monitoring and business insights.</p></article><article class="skill-card"><h3>Dashboard &amp; Reporting</h3><p>Interactive dashboards, automated reporting, management scorecards and performance visualization.</p></article><article class="skill-card"><h3>Business Analysis</h3><p>Sales performance, target achievement, store segmentation, profitability and business impact analysis.</p></article><article class="skill-card"><h3>Operations Management</h3><p>Store performance monitoring, manpower productivity, operational compliance and cost control.</p></article><article class="skill-card"><h3>Planning &amp; Optimization</h3><p>Demand planning, preparation planning, waste monitoring and resource optimization.</p></article><article class="skill-card"><h3>Problem Solving</h3><p>Root cause analysis, performance gap identification, action planning and cross-functional collaboration.</p></article></div><div class="tools"><h3>Tools &amp; Technologies</h3><div class="tags"><span class="tag">Microsoft Excel</span><span class="tag">Google Sheets</span><span class="tag">Looker Studio</span><span class="tag">Google Apps Script</span><span class="tag">SQL</span><span class="tag">BigQuery</span></div></div></div></section>
 <section class="projects-section" id="projects"><div class="container"><div class="section-head"><div class="section-label">03 / Selected Work</div><h2>Project Showcase</h2><p>Selected analytical and operational initiatives. Explore each project to understand its business objective, approach, and practical application.</p></div><div class="filters"><button class="filter active" data-filter="all">All Projects</button><button class="filter" data-filter="analytics">Data Analytics</button><button class="filter" data-filter="operations">Operations</button><button class="filter" data-filter="planning">Planning</button></div><div class="project-grid">
 <article class="project-card" data-category="analytics"><div class="project-visual"><div class="visual-kicker">BUSINESS INTELLIGENCE</div><div class="visual-title">Sales Performance</div><div class="visual-mark">↗</div></div><div class="project-body"><span class="tag">Data Analytics</span><h3>Sales Performance Dashboard</h3><p>Consolidated sales monitoring covering daily performance, target achievement, sales trends, SSSG, merchant contribution and menu mix to support management review.</p><button class="detail-btn" data-project="sales">View Project Details →</button></div></article>
-<article class="project-card" data-category="analytics operations"><div class="project-visual" style="background:linear-gradient(125deg,#10264a,#087f99)"><div class="visual-kicker">CHANNEL STRATEGY · PROBLEM SOLVING</div><div class="visual-title">Pickup Channel Initiative</div><div class="visual-mark">↗</div></div><div class="project-body"><span class="tag">New Channel · Incrementality Analysis</span><h3>Pickup Channel Launch &amp; Impact Assessment</h3><p>Evaluated the new Pickup channel after 80 days by measuring sales contribution, same-store ADS growth, cannibalization and incremental ADS.</p><button class="detail-btn" data-project="pickup">View Project Details →</button></div></article>
+<article class="project-card" data-category="analytics operations"><div class="project-visual" style="background:linear-gradient(125deg,#10264a,#087f99)"><div class="visual-kicker">CHANNEL STRATEGY · PROBLEM SOLVING</div><div class="visual-title">Pickup Channel Initiative</div><div class="visual-mark">↗</div></div><div class="project-body"><span class="tag">New Channel · Incrementality Analysis</span><h3>Pickup Channel Launch &amp; Impact Assessment</h3><p>Evaluated a new sales channel through target performance, comparable-store ADS and channel-mix analysis.</p><button class="detail-btn" data-project="pickup">View Project Details →</button></div></article>
 <article class="project-card" data-category="analytics"><div class="project-visual"><div class="visual-kicker">STORE PERFORMANCE</div><div class="visual-title">Store Bucket Analysis</div><div class="visual-mark">▦</div></div><div class="project-body"><span class="tag">Business Analysis · Quadrant Analysis</span><h3>Store Bucket Analysis</h3><p>Sales × GP3 quadrant analysis to segment stores into Stars, Bloomers, Matures and Laggards, evaluate portfolio health and monitor month-to-month bucket movement.</p><button class="detail-btn" data-project="bucket">View Project Details →</button></div></article>
 <article class="project-card" data-category="planning operations"><div class="project-visual"><div class="visual-kicker">DEMAND &amp; PREPARATION</div><div class="visual-title">Preparation Planning</div><div class="visual-mark">◷</div></div><div class="project-body"><span class="tag">Demand Planning · Operations Analytics</span><h3>Preparation Planning &amp; Overstock Reduction</h3><p>Built a demand-led preparation planning method from September 2026 historical sales across 188 stores, translating hourly product demand into component-level preparation schedules.</p><button class="detail-btn" data-project="prep">View Project Details →</button></div></article>
 <article class="project-card" data-category="analytics operations"><div class="project-visual"><div class="visual-kicker">PROFITABILITY</div><div class="visual-title">GP3 Optimization</div><div class="visual-mark">◎</div></div><div class="project-body"><span class="tag">Financial Analysis</span><h3>Sales &amp; GP3 Objective Scheme</h3><p>Analytical framework to identify the sales requirement for stores to achieve a minimum GP3 target of 15%, supporting operational and financial decisions.</p><button class="detail-btn" data-project="gp3">View Project Details →</button></div></article>
@@ -173,45 +223,33 @@ body{font-size:16px}.navlinks{font-size:13px}.hero .eyebrow,.section-label{font-
 
 <section class="pickup-section">
 <div class="section-label">01 / Business Context</div>
-<h4>Launch a new channel—and prove whether it creates incremental sales</h4>
-<p>The Pickup channel was introduced to expand customer convenience and create another way to purchase. The business challenge was not only to measure Pickup sales, but also to identify whether the new channel created additional demand or shifted transactions from Dine-In, Take Away and Online. Gross channel contribution alone could overstate the initiative's commercial value without a cannibalization assessment.</p>
-<div class="pickup-problem"><b>Core problem to solve</b><span>Measure Pickup performance against its target, identify its relationship with existing channels, and estimate the incremental sales contribution using ADS per store.</span></div>
+<h4>Evaluate whether a new Pickup channel delivers business value</h4>
+<p>Pickup was introduced to expand customer convenience and create another purchase option. The business challenge was to assess channel performance beyond sales volume: understand how Pickup performed against its contribution target, monitor comparable-store performance and identify its relationship with existing sales channels.</p>
+<div class="pickup-problem"><b>Business question</b><span>How can management distinguish channel performance, store-level sales movement and the actual commercial value of the Pickup initiative?</span></div>
 </section>
 
 <section class="pickup-section">
 <div class="section-label">02 / Data Story</div>
-<h4>Pickup passed its contribution target—but not all channel growth was incremental</h4>
-<div class="pickup-kpi-grid">
-<div class="pickup-kpi pickup-kpi-primary"><span>PICKUP SALES CONTRIBUTION</span><strong>5.16%</strong><small>Target 5.00% · +0.16 percentage points</small><b>103.2% target achievement</b></div>
-<div class="pickup-kpi"><span>SAME-STORE ADS GROWTH</span><strong>+0.69%</strong><small>2025 vs 2026 · 143 matched stores</small></div>
-<div class="pickup-kpi"><span>POST-LAUNCH REVIEW</span><strong>80 Days</strong><small>Performance after implementation</small></div>
-</div>
-<div class="pickup-split-grid">
-<div class="pickup-split-card"><span>CANNIBALIZATION RATE</span><strong>85.58%</strong><p>Reported GAR cannibalization outcome.</p></div>
-<div class="pickup-split-card"><span>INCREMENTAL CONTRIBUTION</span><strong>13.30%</strong><p>Reported incremental contribution outcome.</p></div>
-<div class="pickup-split-card pickup-incremental"><span>INCREMENTAL ADS</span><strong>Rp 421K</strong><p>Incremental average daily sales per store.</p></div>
-</div>
-<p class="pickup-story-takeaway"><b>Key finding:</b> After 80 days, Pickup reached 5.16% sales contribution against a 5.00% target. The GAR analysis went beyond channel share and evaluated existing-channel movement, reporting 85.58% cannibalization and 13.30% incremental contribution, equivalent to Rp 421K incremental ADS.</p>
-<div class="pickup-channel-story">
-<div><b>Existing channels reviewed</b><span>Dine-In · Take Away · Online</span></div>
-<div><b>Like-for-like comparison</b><span>2025 vs 2026 ADS · 143 stores</span></div>
-<div><b>GAR comparison</b><span>Pre-launch baseline vs post-launch ADS per store</span></div>
+<h4>Channel performance needs both a sales view and a like-for-like store view</h4>
+<div class="pickup-story-grid">
+<div><b>Channel contribution</b><p>Track Pickup sales against the channel target and monitor its share of total sales.</p></div>
+<div><b>Comparable-store performance</b><p>Compare ADS across matched stores to understand the underlying sales trend without mixing in store-count changes.</p></div>
+<div><b>Existing-channel movement</b><p>Review Dine-In, Take Away and Online movement alongside Pickup to understand changes in channel mix.</p></div>
 </div>
 </section>
 
 <section class="pickup-section">
 <div class="section-label">03 / Methodology &amp; Calculation Logic</div>
-<h4>Evaluate channel movement on an ADS-per-store basis</h4>
-<p>The GAR report uses a 28-day pre-launch baseline from 21 July to 17 August 2026. The post-launch GAR period starts on 18 August 2026. ADS per store is used to make the pre- and post-launch periods comparable at store level.</p>
+<h4>Build a comparable baseline and evaluate sales movement per store</h4>
+<p>The GAR analysis uses a 28-day pre-launch baseline from 21 July to 17 August 2026. The post-launch period begins on 18 August 2026. ADS per store is used to normalize store performance across the baseline and GAR periods.</p>
 <div class="pickup-method">
-<div><span>01</span><article><b>Establish the baseline</b><p>Calculate average daily sales per store for 21 Jul–17 Aug 2026 (28 days).</p></article></div>
-<div><span>02</span><article><b>Build the GAR-period view</b><p>Calculate average daily sales per store from 18 Aug 2026 through the review period.</p></article></div>
-<div><span>03</span><article><b>Compare channel movement</b><p>Measure total ADS and Pickup ADS changes, then review Dine-In, Take Away and Online declines.</p></article></div>
-<div><span>04</span><article><b>Estimate cannibalized ADS</b><p>Limit the existing-channel decline attributed to Pickup to the amount of Pickup ADS growth.</p></article></div>
-<div><span>05</span><article><b>Calculate incremental ADS</b><p>Subtract estimated cannibalized ADS from Pickup ADS growth at store level.</p></article></div>
-<div><span>06</span><article><b>Classify store impact</b><p>Use total ADS change and Pickup ADS growth to distinguish Non Impact, Impact Partial and Impact Full.</p></article></div>
+<div><span>01</span><article><b>Establish the baseline</b><p>Calculate average daily sales per store for the 28-day pre-launch period.</p></article></div>
+<div><span>02</span><article><b>Prepare the GAR-period view</b><p>Calculate average daily sales per store from the launch date through the review period.</p></article></div>
+<div><span>03</span><article><b>Map channel movement</b><p>Aggregate Dine-In, Take Away, Online and Pickup at store and date level.</p></article></div>
+<div><span>04</span><article><b>Normalize store performance</b><p>Compare ADS per store, rather than total sales, to reduce distortion from different store counts.</p></article></div>
+<div><span>05</span><article><b>Classify store-level movement</b><p>Apply the GAR cannibalization and impact-status rules to identify different store patterns.</p></article></div>
+<div><span>06</span><article><b>Monitor the like-for-like cohort</b><p>Compare 2025 and 2026 ADS across matched stores and review daily performance against a same-weekday baseline.</p></article></div>
 </div>
-
 <div class="pickup-formula-grid">
 <div><b>ADS / Store</b><code>Period Net Sales ÷ Observed Operating Days</code></div>
 <div><b>Δ ADS / Store</b><code>GAR Period ADS − Baseline ADS</code></div>
@@ -219,23 +257,19 @@ body{font-size:16px}.navlinks{font-size:13px}.hero .eyebrow,.section-label{font-
 <div><b>Existing Channel Decline</b><code>MAX(Baseline Existing ADS − GAR Existing ADS, 0)</code></div>
 <div><b>Cannibalized ADS</b><code>MIN(Pickup Δ ADS, Existing Channel Decline)</code></div>
 <div><b>Incremental ADS</b><code>MAX(Pickup Δ ADS − Cannibalized ADS, 0)</code></div>
-<div><b>Cannibalization Rate</b><code>Cannibalized ADS ÷ Pickup Δ ADS</code></div>
 <div><b>Pickup Contribution</b><code>Pickup ADS ÷ Total ADS</code></div>
 <div><b>Same-Store ADS Growth</b><code>(ADS 2026 − ADS 2025) ÷ ADS 2025</code></div>
-<div><b>Potential Cannibalization Source</b><code>Channel-level decline ADS ÷ Total Potential Cannibalized ADS</code></div>
 </div>
-
 <div class="pickup-status-panels">
-<div><b>Cannibalization Status</b><ul>
+<div><b>Channel Cannibalization Status</b><ul>
 <li><strong>Full:</strong> Existing-channel decline is equal to or greater than Pickup growth.</li>
 <li><strong>Partial:</strong> Existing-channel decline is positive but lower than Pickup growth.</li>
-<li><strong>No Cannibalization:</strong> Pickup grows without existing-channel decline.</li>
+<li><strong>No Cannibalization:</strong> Pickup grows without an existing-channel decline.</li>
 <li><strong>No Pickup Growth:</strong> Pickup ADS does not increase versus baseline.</li>
 </ul></div>
-<div><b>Impact Status — spreadsheet classification</b><code>=IF(Δ_ADS&lt;0,"NON IMPACT",IF(Δ_ADS&lt;=Pickup_ADS,"IMPACT PARTIAL","IMPACT FULL"))</code><p>Uses total Δ ADS as the comparison against Pickup ADS growth.</p></div>
+<div><b>Store Impact Status</b><code>=IF(Δ_ADS&lt;0,"NON IMPACT",IF(Δ_ADS&lt;=Pickup_ADS,"IMPACT PARTIAL","IMPACT FULL"))</code><p>Classifies the store based on total ADS movement compared with Pickup ADS growth.</p></div>
 </div>
-
-<div class="pickup-code-head"><div><b>BigQuery · Store-Level GAR Analysis</b><span>Daily store × channel aggregation, ADS and impact calculations</span></div><a href="examples/gar_pickup_analysis.sql" target="_blank" rel="noopener">View full SQL example ↗</a></div>
+<div class="pickup-code-head"><div><b>BigQuery · Store-Level GAR Analysis</b><span>Daily store × channel aggregation and ADS calculations</span></div><a href="examples/gar_pickup_analysis.sql" target="_blank" rel="noopener">View SQL example ↗</a></div>
 <pre class="pickup-code"><code>cannibalized_ads =
   LEAST(pickup_delta_ads, existing_channel_decline_ads)
 
@@ -255,35 +289,32 @@ cannibalization_status =
 
 <section class="pickup-section">
 <div class="section-label">04 / Tools Used</div>
-<h4>From source data to management-ready channel monitoring</h4>
+<h4>From source data to management monitoring</h4>
 <div class="stack-grid">
 <div class="stack-item"><b>BigQuery</b><span>Daily sales extraction from the store-channel sales summary.</span></div>
-<div class="stack-item"><b>SQL</b><span>Channel mapping, store-level ADS aggregation and impact calculations.</span></div>
-<div class="stack-item"><b>Google Sheets</b><span>GAR analysis model, baseline comparison, cannibalization and impact classification.</span></div>
-<div class="stack-item"><b>Looker Studio</b><span>Executive summary, channel analysis, daily monitoring and store drill-down.</span></div>
+<div class="stack-item"><b>SQL</b><span>Channel mapping, store-level ADS aggregation and analytical calculations.</span></div>
+<div class="stack-item"><b>Google Sheets</b><span>GAR analysis model, baseline comparison and store-impact classification.</span></div>
+<div class="stack-item"><b>Looker Studio</b><span>Channel performance, daily monitoring and store-level reporting.</span></div>
 </div>
 </section>
 
 <section class="pickup-section">
 <div class="section-label">05 / Looker Studio Dashboard</div>
-<h4>GAR — Pickup Cannibalization &amp; Gain Monitoring</h4>
-<p>The Looker Studio report connects the executive summary with store status, Pickup impact, existing-channel movement, daily performance and store/channel drill-down.</p>
-<div class="pickup-dashboard-preview"><button type="button" data-preview="assets/gar-pickup-looker-dashboard.svg" data-title="GAR Pickup Cannibalization &amp; Gain Monitoring"><img loading="lazy" src="assets/gar-pickup-looker-dashboard.svg" alt="GAR Pickup Cannibalization and Gain Monitoring Looker Studio dashboard preview"><span>Enlarge Looker Studio dashboard ↗</span></button></div>
-<div class="pickup-dashboard-modules">
-<span>Executive Summary</span><span>Store Status Overview</span><span>Pickup vs Total ADS Growth</span><span>Potential Cannibalization Source by Channel</span><span>Daily Performance Monitoring</span><span>Store &amp; Channel Drill-Down</span>
-</div>
+<h4>Pickup Channel Performance Monitor</h4>
+<p>A simulated dashboard preview showing how the monitoring experience brings Pickup sales, order activity, day-type trends, channel mix and store performance into one view.</p>
+<div class="pickup-dashboard-preview"><button type="button" data-preview="assets/gar-pickup-looker-dashboard.svg" data-title="Simulated Pickup Channel Performance Dashboard"><img loading="lazy" src="assets/gar-pickup-looker-dashboard.svg" alt="Simulated Pickup channel dashboard with sales trend, order KPIs, channel mix and store table"><span>Enlarge dashboard ↗</span></button></div>
 </section>
 
 <section class="pickup-section">
 <div class="section-label">06 / Business Impact</div>
-<h4>Measured contribution and identified the quality of channel growth</h4>
+<h4>Measured the channel outcome after 80 days of implementation</h4>
 <div class="pickup-impact-list">
-<div><b>Target achievement</b><strong>5.16% vs 5.00%</strong><span>Pickup sales contribution reached 103.2% of target after 80 days.</span></div>
-<div><b>Same-store performance</b><strong>+0.69%</strong><span>2025 vs 2026 ADS growth across 143 matched stores.</span></div>
-<div><b>Incremental value identified</b><strong>13.30% · Rp 421K ADS</strong><span>Reported incremental contribution and per-store incremental ADS.</span></div>
-<div><b>Channel-shift visibility</b><strong>85.58%</strong><span>GAR cannibalization outcome highlighted the importance of measuring net incremental value.</span></div>
+<div><b>Pickup sales contribution</b><strong>5.16% vs 5.00%</strong><span>Reached 103.2% of target, exceeding the target by 0.16 percentage points.</span></div>
+<div><b>Same-store ADS growth</b><strong>+0.69%</strong><span>2025 vs 2026 across 143 matched stores.</span></div>
+<div><b>Reported cannibalization rate</b><strong>85.58%</strong><span>GAR assessment of Pickup growth overlapping with existing-channel decline.</span></div>
+<div><b>Reported incremental outcome</b><strong>13.30% · Rp 421K ADS</strong><span>Incremental contribution rate and incremental average daily sales per store reported by the analysis.</span></div>
 </div>
-<div class="pickup-impact-statement"><b>Business value</b><p>The analysis changed the evaluation from “How much sales does Pickup generate?” to “How much of Pickup growth is incremental?” It gave management a clearer view of target delivery, channel shifts and store-level impact to support informed decisions on channel performance and future growth.</p></div>
+<div class="pickup-impact-statement"><b>Business value</b><p>The initiative was evaluated beyond gross Pickup sales. The analysis provided management with a consistent view of target achievement, comparable-store movement and channel interaction to support more informed decisions on Pickup performance and future channel development.</p></div>
 </section>
 </div><div id="bucketCaseStudy" class="bucket-case-study hidden">
 <div class="section-label">Case Study Details</div>
