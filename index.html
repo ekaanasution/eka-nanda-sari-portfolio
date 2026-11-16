@@ -70,108 +70,125 @@ body{font-size:16px}.navlinks{font-size:13px}.hero .eyebrow,.section-label{font-
 <div class="preview-modal" id="dashboardPreview" role="dialog" aria-modal="true" aria-label="Dashboard preview"><div class="preview-box"><div class="preview-top"><b id="previewTitle">Dashboard Preview</b><button class="preview-close" id="previewClose" aria-label="Close preview">×</button></div><img id="previewImage" src="" alt="Enlarged illustrative dashboard preview"><p class="preview-help">Illustrative sample data only. Original business figures and store identifiers are not shown.</p></div></div></main><footer class="footer">© 2026 Eka Nanda Sari · Portfolio</footer>
 <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="section-label">Project Overview</div><h3 id="modalTitle"></h3><p id="modalDescription"></p><div class="section-label" style="margin-top:18px">Key Activities</div><ul id="modalActivities"></ul><div class="section-label" style="margin-top:18px">Business Value</div><p id="modalValue"></p><div id="salesCaseStudy" class="sales-case-study hidden">
 <div class="section-label">Case Study Details</div>
-<section class="case-section"><div class="section-label">01 / Business Problem</div><h4>What needed to be solved?</h4><p>Sales and operational performance information was distributed across analytical data sources and spreadsheet-based targets. Management needed a consistent view of performance across stores, regions, channels and products, while reporting preparation required significant manual effort.</p></section>
-<section class="case-section"><div class="section-label">02 / Data Sources</div><h4>Combining operational and target data</h4><div class="case-columns">
-<div class="case-info"><b>Google BigQuery</b><p>Sales summary datasets for daily, store, channel, daypart and SKU-level analysis.</p><code>Sales date · Store ID · Channel · SKU · Net sales · Quantity</code></div>
-<div class="case-info"><b>Google Sheets</b><p>Sales target inputs and supporting store reference / mapping data.</p><code>Sales date · Code GIS · Store target · Store attributes</code></div>
-</div></section>
-<section class="case-section"><div class="section-label">03 / Tools &amp; Technologies</div><h4>Technology stack</h4><div class="stack-grid">
-<div class="stack-item"><b>BigQuery</b><span>SQL · data extraction · aggregation</span></div>
-<div class="stack-item"><b>Google Sheets</b><span>Target data · reference mapping · validation</span></div>
-<div class="stack-item"><b>Looker Studio</b><span>Dashboard design · filters · KPI reporting</span></div>
-<div class="stack-item"><b>Blended Data</b><span>Combining BigQuery sales with spreadsheet targets</span></div>
-<div class="stack-item"><b>Extract Data</b><span>Selected report extracts · refresh management</span></div>
-<div class="stack-item"><b>Data Modeling</b><span>Dimensions · metrics · reporting grain</span></div>
-</div><div class="tags case-tags"><span class="tag">SQL</span><span class="tag">BigQuery</span><span class="tag">Google Sheets</span><span class="tag">Looker Studio</span><span class="tag">Google Apps Script</span></div></section>
-<section class="case-section"><div class="section-label">04 / Analytical Workflow</div><h4>How the solution was developed</h4><div class="workflow">
-<div class="workflow-step"><span>1</span><div><b>Define business metrics</b><p>Align definitions for net sales, target achievement, SSSG, ADS, channel contribution and product mix.</p></div></div>
-<div class="workflow-step"><span>2</span><div><b>Extract and prepare data in BigQuery</b><p>Use SQL to select required columns, apply date filters and aggregate data at the intended reporting level.</p></div></div>
-<div class="workflow-step"><span>3</span><div><b>Optimize query scope</b><p>Use the partitioned sales-date field for period filtering, avoid unnecessary columns and limit processing to the data required by each report.</p></div></div>
-<div class="workflow-step"><span>4</span><div><b>Blend sales and target sources</b><p>Combine BigQuery sales with Google Sheets target data using aligned store and date keys, then validate the blended totals.</p></div></div>
-<div class="workflow-step"><span>5</span><div><b>Configure Looker Studio reporting</b><p>Build KPI scorecards, trends, comparisons, category breakdowns, detail tables and management filters.</p></div></div>
-<div class="workflow-step"><span>6</span><div><b>Use Extract Data where appropriate</b><p>Create selected extracts for frequently accessed reporting views to reduce repeated live-query activity and improve report responsiveness, while managing refresh frequency and data freshness.</p></div></div>
-<div class="workflow-step"><span>7</span><div><b>Validate and refine</b><p>Reconcile totals against source data, check date and store keys, review aggregation grain and test filter behavior before sharing.</p></div></div>
-</div></section>
-
-<section class="case-section"><div class="section-label">05 / Analytical Capabilities Demonstrated</div><div class="capability-grid">
-<div><b>Data extraction &amp; preparation</b><p>Translate business questions into focused SQL datasets.</p></div>
-<div><b>Data blending &amp; modeling</b><p>Combine sales and target sources with consistent keys and grain.</p></div>
-<div><b>Query &amp; reporting optimization</b><p>Reduce unnecessary scans and repeated live-query activity where suitable.</p></div>
-<div><b>Business intelligence</b><p>Turn KPIs and trends into an accessible management reporting experience.</p></div>
-</div></section>
-<div class="case-impact"><div><span>DOCUMENTED IMPACT</span><strong>80%</strong><b>Reporting time reduction</b><p>Through reporting automation and dashboard development.</p></div><div><span>REPORTING SCOPE</span><strong>180+</strong><b>Stores supported</b><p>Multi-store performance visibility for management review.</p></div></div>
-<p class="case-disclaimer">Confidentiality note: This portfolio uses illustrative dashboard visuals and dummy figures. Company datasets, outlet identifiers and confidential business information are not published.</p>
+<section class="case-section">
+<div class="section-label">01 / Business Context</div>
+<h4>Build one reliable view of sales performance across the store network</h4>
+<p>Management needed a consistent way to evaluate sales performance across stores, regions, channels and products. Sales actuals were sourced from BigQuery, while store-level targets and supporting reference data were maintained separately in Google Sheets. Preparing these views manually made it harder to compare performance quickly and consistently across the business.</p>
+</section>
+<section class="case-section">
+<div class="section-label">02 / Data Story</div>
+<h4>Sales performance is more than one total number</h4>
+<p>The analysis connects sales actuals with targets and operational dimensions so that management can move from a national overview to the drivers behind each result.</p>
+<div class="case-columns">
+<div class="case-info"><b>Target achievement</b><p>Compare actual sales with target by month, quarter, region, area manager and store to reveal where performance is above or below plan.</p></div>
+<div class="case-info"><b>Comparable store growth</b><p>Review SSSG and average daily sales to distinguish underlying store performance from changes in the store network.</p></div>
+<div class="case-info"><b>Merchant contribution</b><p>Understand the contribution of offline, online and pickup channels, including the merchant mix behind sales performance.</p></div>
+<div class="case-info"><b>Product and store lifecycle</b><p>Explore menu mix, menu details and forecast-versus-actual performance for new stores across honeymoon and mature periods.</p></div>
+</div>
+</section>
+<section class="case-section">
+<div class="section-label">03 / Methodology</div>
+<h4>Integrate, validate and optimize the reporting pipeline</h4>
+<div class="workflow">
+<div class="workflow-step"><span>1</span><div><b>Define reporting metrics</b><p>Align the definitions and reporting grain for net sales, sales target, achievement, SSSG, ADS, merchant contribution and product mix.</p></div></div>
+<div class="workflow-step"><span>2</span><div><b>Prepare sales data in BigQuery</b><p>Use SQL to select relevant fields, aggregate sales at the required reporting level and filter on the partitioned sales-date field.</p></div></div>
+<div class="workflow-step"><span>3</span><div><b>Blend actuals with targets</b><p>Connect BigQuery sales with Google Sheets targets using store code and date keys, then validate the join grain to avoid duplicated sales or targets.</p></div></div>
+<div class="workflow-step"><span>4</span><div><b>Optimize report processing</b><p>Limit query scope and selected columns. Use Looker Studio Extract Data for selected reporting views to reduce repeated live-query activity and manage refresh needs.</p></div></div>
+<div class="workflow-step"><span>5</span><div><b>Build and validate the dashboard suite</b><p>Develop scorecards, trends, regional comparisons, channel and menu breakdowns, detail tables and management filters. Reconcile key totals against source data.</p></div></div>
+</div>
+</section>
+<section class="case-section">
+<div class="section-label">04 / Tools Used</div>
+<h4>Technology stack</h4>
+<div class="stack-grid">
+<div class="stack-item"><b>BigQuery</b><span>Central sales data source and analytical extraction.</span></div>
+<div class="stack-item"><b>SQL</b><span>Filtering, aggregation and query-scope optimization.</span></div>
+<div class="stack-item"><b>Google Sheets</b><span>Sales target inputs and supporting reference data.</span></div>
+<div class="stack-item"><b>Looker Studio</b><span>Interactive dashboards, scorecards and management filters.</span></div>
+<div class="stack-item"><b>Data Blending</b><span>Combining sales actuals with target data by store and date.</span></div>
+<div class="stack-item"><b>Extract Data</b><span>Selected report extracts to reduce repeated live-query processing.</span></div>
+</div>
+</section>
+<section class="case-section">
+<div class="section-label">05 / Business Impact</div>
+<h4>Faster reporting and broader performance visibility</h4>
+<div class="case-impact">
+<div><span>REPORTING EFFICIENCY</span><strong>80%</strong><b>Reduction in reporting time</b><p>Reporting automation and dashboard development reduced manual preparation effort.</p></div>
+<div><span>BUSINESS COVERAGE</span><strong>180+</strong><b>Stores supported</b><p>Consistent performance visibility for management and operations review.</p></div>
+</div>
+<p>The dashboard suite brings sales, target achievement, SSSG, merchant contribution, menu mix and store-level performance into one review experience—helping management identify performance gaps and focus follow-up where it matters.</p>
+</section>
 </div><div id="bucketCaseStudy" class="bucket-case-study hidden">
-<div class="bucket-section"><div class="section-label">01 / Business Problem</div><h4>One portfolio. Four different performance realities.</h4><p>Store performance cannot be managed through sales alone. A store may achieve its sales benchmark while underperforming on GP3, or protect margin while still missing its sales opportunity. Without a combined view, high-potential stores and stores requiring intervention can be treated with the same action plan.</p><div class="bucket-callout"><b>Core question</b><span>Which stores are winning on both sales and profitability, which have untapped potential, and which need a focused recovery plan?</span></div></div>
+<div class="section-label">Case Study Details</div>
+<div class="bucket-section"><div class="section-label">01 / Business Context</div><h4>Manage store performance with more than a sales ranking</h4><p>Stores can achieve different outcomes across sales and profitability. A store may reach its sales benchmark but miss the GP3 objective, while another may protect GP3 but still have room to grow sales. Management needs a clear way to distinguish these situations and assign different priorities instead of applying one action plan to every store.</p></div>
 
-<div class="bucket-section"><div class="section-label">02 / Quadrant Framework</div><h4>Sales × GP3: a two-dimensional view of store health</h4><p>Each store is positioned using its sales achievement against an approved store benchmark and its GP3 margin. This separates sales performance from profitability instead of allowing one metric to hide the other.</p>
+<div class="bucket-section"><div class="section-label">02 / Data Story</div><h4>Four performance segments emerge from the Sales × GP3 quadrant</h4><p>Each store is positioned using sales achievement against its benchmark and GP3 margin. The quadrant turns two business measures into four actionable store profiles.</p>
 <div class="bucket-rules">
-<div class="bucket-rule"><i style="background:#1bb7d6"></i><div><b>STARS</b><span>Sales ≥ 100% · GP3 ≥ 15%</span><p>Strong sales and healthy profitability. Protect, sustain and replicate.</p></div></div>
-<div class="bucket-rule"><i style="background:#b1db2b"></i><div><b>BLOOMERS</b><span>Sales &lt; 100% · GP3 ≥ 15%</span><p>Healthy margin with sales upside. Accelerate growth without diluting GP3.</p></div></div>
-<div class="bucket-rule"><i style="background:#ed008c"></i><div><b>MATURES</b><span>Sales ≥ 100% · GP3 &lt; 15%</span><p>Sales are delivered, but margin needs attention. Focus on cost and mix.</p></div></div>
-<div class="bucket-rule"><i style="background:#172f8f"></i><div><b>LAGGARDS</b><span>Sales &lt; 100% · GP3 &lt; 15%</span><p>Both dimensions need improvement. Prioritize root-cause diagnosis and recovery.</p></div></div>
+<div class="bucket-rule"><i style="background:#1bb7d6"></i><div><b>STARS</b><span>Sales ≥ 100% · GP3 ≥ 15%</span><p>Strong sales and healthy profitability. Protect performance and replicate good practices.</p></div></div>
+<div class="bucket-rule"><i style="background:#b1db2b"></i><div><b>BLOOMERS</b><span>Sales &lt; 100% · GP3 ≥ 15%</span><p>Healthy margin with sales upside. Focus on unlocking demand and transactions.</p></div></div>
+<div class="bucket-rule"><i style="background:#ed008c"></i><div><b>MATURES</b><span>Sales ≥ 100% · GP3 &lt; 15%</span><p>Sales are achieved, but profitability needs recovery through cost and mix improvement.</p></div></div>
+<div class="bucket-rule"><i style="background:#172f8f"></i><div><b>LAGGARDS</b><span>Sales &lt; 100% · GP3 &lt; 15%</span><p>Both dimensions need attention. Prioritize root-cause diagnosis and a focused recovery plan.</p></div></div>
 </div>
 <div class="bucket-visual"><button type="button" data-preview="assets/store-bucket-quadrant.svg" data-title="Store Performance Quadrant Analysis"><img loading="lazy" src="assets/store-bucket-quadrant.svg" alt="Illustrative Sales and GP3 store performance quadrant chart"><span>Open quadrant analysis ↗</span></button></div>
+<h4 style="margin-top:18px">Track movement, not just bucket position</h4>
+<p>Month-to-month transition analysis follows each store from its previous bucket to its latest bucket. The movement matrix distinguishes stores that improve, remain stable or decline, and shows where management attention may be needed.</p>
+<div class="bucket-visual"><button type="button" data-preview="assets/store-bucket-mtm.svg" data-title="Illustrative Month-to-Month Bucket Movement"><img loading="lazy" src="assets/store-bucket-mtm.svg" alt="Illustrative store bucket month-to-month transition matrix"><span>Open MTM transition matrix ↗</span></button></div>
 </div>
 
-<div class="bucket-section"><div class="section-label">03 / Data &amp; Metrics</div><h4>Make stores comparable before classifying them</h4><div class="bucket-metric-grid">
-<div><b>Sales Achievement</b><code>Actual Sales ÷ Store Sales Benchmark × 100%</code><span>Measures how the store performs against its sales benchmark for the selected review period.</span></div>
-<div><b>GP3 Margin</b><code>GP3 ÷ Net Sales × 100%</code><span>Measures profitability relative to net sales, using a consistent GP3 definition.</span></div>
-<div><b>Store Dimension</b><code>Store / Code GIS · RM · AM · City · Province</code><span>Provides stable store mapping and supports drill-down by operational responsibility.</span></div>
-<div><b>Period &amp; Maturity</b><code>Month · Operating days · GO date</code><span>Supports like-for-like comparison and helps interpret newly opened stores separately when needed.</span></div>
-</div></div>
-
-<div class="bucket-section"><div class="section-label">04 / Analytical Workflow</div><h4>From store-level data to management prioritization</h4><div class="bucket-flow">
-<div><strong>01</strong><b>Set the review baseline</b><p>Choose a comparable period and confirm the sales benchmark, GP3 definition and store inclusion rules.</p></div>
-<div><strong>02</strong><b>Calculate store KPIs</b><p>Calculate sales achievement and GP3 margin at one row per store and review period.</p></div>
-<div><strong>03</strong><b>Assign quadrant</b><p>Apply both thresholds consistently to classify each store into one of four buckets.</p></div>
-<div><strong>04</strong><b>Find the performance pattern</b><p>Compare bucket composition by region, RM, AM, city and store maturity to identify concentration and gaps.</p></div>
-<div><strong>05</strong><b>Track MTM movement</b><p>Match stores across consecutive months and classify transitions as improving, stable or declining.</p></div>
-<div><strong>06</strong><b>Prioritize action</b><p>Translate the quadrant and movement analysis into differentiated store action plans and follow-up.</p></div>
-</div></div>
-
-<div class="bucket-section"><div class="section-label">05 / Strategic Action Plan</div><h4>Different buckets require different management responses</h4><div class="action-grid">
-<div class="action-card stars"><b>STARS · Sustain &amp; Replicate</b><ul><li>Protect service, product quality and store execution.</li><li>Identify practices that can be replicated by other stores.</li><li>Monitor whether sales growth is achieved without GP3 dilution.</li></ul></div>
-<div class="action-card bloomers"><b>BLOOMERS · Unlock Sales Potential</b><ul><li>Review traffic, transactions and average check opportunities.</li><li>Improve local activation, product availability and upselling.</li><li>Grow sales while protecting the healthy GP3 margin.</li></ul></div>
-<div class="action-card matures"><b>MATURES · Recover Profitability</b><ul><li>Review food cost, discounts, waste and product mix.</li><li>Assess manpower productivity and controllable operating costs.</li><li>Set GP3 recovery actions while maintaining sales momentum.</li></ul></div>
+<div class="bucket-section"><div class="section-label">03 / Methodology</div><h4>From store-level metrics to differentiated action</h4>
+<div class="bucket-metric-grid">
+<div><b>Sales Achievement</b><code>Actual Sales ÷ Store Sales Benchmark × 100%</code><span>Compares store sales with its selected sales benchmark.</span></div>
+<div><b>GP3 Margin</b><code>GP3 ÷ Net Sales × 100%</code><span>Measures profitability relative to net sales.</span></div>
+</div>
+<div class="bucket-flow">
+<div><strong>01</strong><b>Prepare the store dataset</b><p>Align sales, GP3, period and store master attributes such as Code GIS, RM, AM, city and province.</p></div>
+<div><strong>02</strong><b>Calculate both KPIs</b><p>Calculate sales achievement and GP3 margin at one row per store for each review period.</p></div>
+<div><strong>03</strong><b>Assign quadrant</b><p>Apply the sales and GP3 thresholds consistently to assign Stars, Bloomers, Matures or Laggards.</p></div>
+<div><strong>04</strong><b>Analyze portfolio patterns</b><p>Compare bucket distribution by region, RM, AM, city and store maturity.</p></div>
+<div><strong>05</strong><b>Measure MTM movement</b><p>Match stores across consecutive periods and classify their transitions between buckets.</p></div>
+<div><strong>06</strong><b>Translate insight into action</b><p>Set differentiated priorities for sales growth, GP3 recovery, performance protection and store turnaround.</p></div>
+</div>
+<div class="bucket-threshold"><b>Classification logic:</b> Sales achievement is split at 100% and GP3 margin at 15%.</div>
+<div class="bucket-section" style="margin-top:18px"><h4>Action priorities by segment</h4><div class="action-grid">
+<div class="action-card stars"><b>STARS · Sustain &amp; Replicate</b><ul><li>Protect service, product quality and store execution.</li><li>Identify practices that can be replicated by other stores.</li><li>Maintain sales growth without diluting GP3.</li></ul></div>
+<div class="action-card bloomers"><b>BLOOMERS · Unlock Sales Potential</b><ul><li>Review traffic, transactions and average check opportunities.</li><li>Improve local activation and product availability.</li><li>Grow sales while protecting healthy GP3.</li></ul></div>
+<div class="action-card matures"><b>MATURES · Recover Profitability</b><ul><li>Review food cost, discounts, waste and product mix.</li><li>Assess manpower productivity and controllable costs.</li><li>Set GP3 recovery actions while maintaining sales.</li></ul></div>
 <div class="action-card laggards"><b>LAGGARDS · Focused Recovery</b><ul><li>Diagnose root causes across sales drivers and cost structure.</li><li>Set store-specific sales and GP3 recovery priorities.</li><li>Apply closer follow-up with clear owners and review cadence.</li></ul></div>
 </div></div>
-
-<div class="bucket-section"><div class="section-label">06 / Month-to-Month Movement</div><h4>Performance is a journey, not a static label</h4><p>The transition matrix follows each store from its baseline bucket to its latest bucket. It distinguishes stores that sustain performance from those improving, slipping or remaining in the same segment.</p>
-<div class="bucket-visual"><button type="button" data-preview="assets/store-bucket-mtm.svg" data-title="Illustrative Month-to-Month Bucket Movement"><img loading="lazy" src="assets/store-bucket-mtm.svg" alt="Illustrative store bucket month-to-month transition matrix"><span>Open MTM transition matrix ↗</span></button></div>
-<div class="bucket-insight"><b>How to read the matrix</b><p>Rows represent the starting bucket; columns represent the latest bucket. Diagonal values are stores that stayed in the same bucket. Off-diagonal values show movement between performance segments.</p></div>
 </div>
 
-<div class="bucket-section"><div class="section-label">07 / Illustrative Results · 180-Store Scenario</div><h4>What the analysis can reveal</h4>
+<div class="bucket-section"><div class="section-label">04 / Tools Used</div><h4>Analytical toolkit</h4><div class="stack-grid">
+<div class="stack-item"><b>Google Sheets</b><span>Store KPI calculations, bucket classification and MTM tracking.</span></div>
+<div class="stack-item"><b>Microsoft Excel</b><span>Portfolio review, cross-checks and analytical summaries.</span></div>
+<div class="stack-item"><b>Quadrant Analysis</b><span>Sales and GP3 segmentation to translate performance into action.</span></div>
+<div class="stack-item"><b>Store Master Data</b><span>Consistent store mapping by RM, AM, city and province.</span></div>
+</div></div>
+
+<div class="bucket-section"><div class="section-label">05 / Business Impact</div><h4>Illustrative 180-store movement scenario</h4>
+<p>The example transition shows how a portfolio review can quantify bucket movement. It is a simulated scenario to demonstrate the analytical output, not a verified company result.</p>
 <div class="bucket-result-grid">
-<div><span>STARS</span><strong>30 → 42</strong><b>+12 stores · +40.0%</b><small>More stores achieving both sales and GP3 benchmarks.</small></div>
-<div><span>LAGGARDS</span><strong>55 → 41</strong><b>−14 stores · −25.5%</b><small>Smaller share of stores remain below both benchmarks.</small></div>
+<div><span>STARS</span><strong>30 → 42</strong><b>+12 stores · +40.0%</b><small>More stores in the high-sales, healthy-GP3 segment.</small></div>
+<div><span>LAGGARDS</span><strong>55 → 41</strong><b>−14 stores · −25.5%</b><small>Fewer stores remain below both benchmarks.</small></div>
 <div><span>LAGGARDS EXITED</span><strong>21 of 55</strong><b>38.2% moved out</b><small>Moved into Stars, Bloomers or Matures in the example transition.</small></div>
 </div>
 <div class="bucket-share"><div><span>Baseline Laggards</span><div><i style="width:30.6%;background:#172f8f"></i></div><b>30.6%</b></div><div><span>Latest Laggards</span><div><i style="width:22.8%;background:#ed008c"></i></div><b>22.8%</b></div></div>
-
+<div class="bucket-impact"><div><span>MANAGEMENT VALUE</span><b>One portfolio. Four action strategies.</b><p>A repeatable framework to identify where to sustain, where to grow, where to recover margin and where to intervene first.</p></div></div>
 </div>
-
-<div class="bucket-section"><div class="section-label">08 / Analytical Capabilities Demonstrated</div><div class="capability-grid">
-<div><b>Performance segmentation</b><p>Translate two business KPIs into a structured four-quadrant framework.</p></div>
-<div><b>Profitability analysis</b><p>Interpret sales achievement together with GP3, not in isolation.</p></div>
-<div><b>MTM transition analysis</b><p>Measure store movement and distinguish stable, improving and declining performance.</p></div>
-<div><b>Management action planning</b><p>Turn analytical findings into segment-specific priorities and follow-up.</p></div>
-</div></div>
-
-<div class="bucket-impact"><div><span>MANAGEMENT VALUE</span><b>One portfolio. Four action strategies.</b><p>A repeatable method to identify where to sustain, where to grow, where to recover margin and where to intervene first.</p></div></div>
-
 </div><div id="prepCaseStudy" class="prep-case-study hidden">
-<div class="prep-section"><div class="section-label">Case Study Details</div></div>
-<div class="prep-section"><div class="section-label">01 / Business Problem</div><h4>Move from reactive preparation to demand-led production planning</h4><p>Preparation teams need to know <b>what component to prepare, how much to make, when it should be ready and how long it can safely remain available</b>. A fixed or manually estimated quantity can create a mismatch between expected hourly demand, recipe requirements, batch sizes and holding-time limits.</p><div class="prep-callout"><b>Project objective</b><span>Convert historical sales and product recipes into a practical, store-level preparation schedule that aligns production quantity and timing with expected demand.</span></div></div>
-<div class="prep-section"><div class="section-label">02 / Data Baseline &amp; Scope</div><h4>September 2026 historical baseline</h4><div class="prep-stats"><div><span>BASELINE PERIOD</span><b>September 2026</b></div><div><span>STORE COVERAGE</span><b>188 stores</b></div><div><span>DEMAND GRAIN</span><b>Hourly · Store · Menu</b></div><div><span>DAY TYPE</span><b>Weekday · Friday · Weekend</b></div></div><p>The full September history was used to establish average demand patterns by store, day type and hour. Product demand was then translated into preparation-component requirements using recipe and preparation master data.</p></div>
-<div class="prep-section"><div class="section-label">03 / Data Preparation &amp; Cleaning</div><h4>Build a consistent analytical dataset before forecasting demand</h4><div class="prep-clean-grid">
-<div><b>Transaction validation</b><p>Filter the selected baseline period, keep valid completed transactions, remove invalid or non-positive quantities and check duplicate detail records.</p></div>
-<div><b>Text standardization</b><p>Trim whitespace, standardize menu names and component labels, and map source item aliases to canonical product names.</p></div>
-<div><b>Master-data validation</b><p>Check store keys, menu-to-recipe mapping, component usage per sale, batch size and holding-time attributes.</p></div>
-<div><b>Aggregation &amp; grain</b><p>Aggregate sales by store, date, day type, hour and menu item before converting sales mix into component demand.</p></div>
-</div><div class="prep-code-head"><div><b>BigQuery · SQL example</b><span>September 2026 baseline example</span></div><a href="examples/preparation_planning.sql" target="_blank" rel="noopener">View full SQL ↗</a></div>
-<pre class="prep-code"><code>-- Standardize and validate historical sales
+<div class="section-label">Case Study Details</div>
+<div class="prep-section"><div class="section-label">01 / Business Context</div><h4>Turn historical sales into a preparation plan the store can execute</h4><p>Store teams need a clear answer to four operational questions: <b>what component to prepare, how much to make, when it should be ready and how long it can be held</b>. Without a demand-based preparation plan, production quantities and timing can become disconnected from actual menu demand, recipe usage, batch sizes and holding-time limits.</p></div>
+
+<div class="prep-section"><div class="section-label">02 / Data Story</div><h4>Build the preparation baseline from September 2026 demand</h4><div class="prep-stats"><div><span>BASELINE PERIOD</span><b>September 2026</b></div><div><span>STORE COVERAGE</span><b>188 stores</b></div><div><span>DEMAND GRAIN</span><b>Hourly · Store · Menu</b></div><div><span>DAY TYPE</span><b>Weekday · Friday · Weekend</b></div></div><p>Historical sales were analyzed by store, day type and hour to establish the demand pattern for each menu item. The menu-level demand was then converted into preparation-component requirements using recipe usage and preparation master data. This creates a more practical basis for deciding preparation quantity and timing than using one fixed quantity across every day type.</p></div>
+
+<div class="prep-section"><div class="section-label">03 / Methodology</div><h4>Clean the source data, model component demand and schedule each batch</h4>
+<div class="prep-clean-grid">
+<div><b>Transaction cleaning</b><p>Filter the September baseline, retain valid completed transactions, remove invalid quantities and handle duplicate transaction-detail records.</p></div>
+<div><b>Text and key standardization</b><p>Trim and standardize menu names, component labels and store keys; map source item names to the canonical menu master.</p></div>
+<div><b>Master-data validation</b><p>Validate menu-to-recipe mapping, component usage per sale, batch size, batch multiple, preparation duration and holding time.</p></div>
+<div><b>Demand aggregation</b><p>Aggregate sales by store, date, day type, hour and menu item before converting menu demand into component demand.</p></div>
+</div>
+<div class="prep-code-head"><div><b>BigQuery · SQL example</b><span>September 2026 baseline</span></div><a href="examples/preparation_planning.sql" target="_blank" rel="noopener">View full SQL ↗</a></div>
+<pre class="prep-code"><code>-- Clean and standardize historical sales
 SELECT
   DATE(order_datetime) AS sales_date,
   EXTRACT(HOUR FROM order_datetime) AS sales_hour,
@@ -184,38 +201,44 @@ WHERE DATE(order_datetime)
   AND SAFE_CAST(quantity AS NUMERIC) &gt; 0
   AND UPPER(TRIM(order_status))
       NOT IN ('VOID', 'CANCELLED', 'REFUNDED');</code></pre>
+
+<div class="prep-formulas">
+<div><b>Average hourly demand</b><code>SUM(Historical Menu Qty) ÷ Observed Days by Store &amp; Day Type</code><span>Establishes a comparable demand baseline for Weekday, Friday and Weekend.</span></div>
+<div><b>Component demand</b><code>Average Menu Demand × Recipe Usage per Sale</code><span>Converts expected menu sales into required preparation component quantity.</span></div>
+<div><b>Batch rounding</b><code>CEILING(Component Demand ÷ 5) × 5</code><span>Rounds preparation quantity to the configured batch multiple of 5.</span></div>
+<div><b>Estimated batch count</b><code>CEILING(Planned Prep Qty ÷ Batch Size)</code><span>Calculates the number of batches based on component batch size.</span></div>
+<div><b>Ready-to-use time</b><code>Preparation Start + Prep Duration</code><span>Sets the time when a prepared component becomes available for use.</span></div>
+<div><b>Maximum use time</b><code>Ready-to-use Time + Holding Time</code><span>Defines the end of the component's usable holding window.</span></div>
 </div>
-<div class="prep-section"><div class="section-label">04 / Demand Model &amp; Preparation Logic</div><h4>Translate sales quantity into component-level preparation</h4><div class="prep-formulas">
-<div><b>01 · Average hourly menu demand</b><code>SUM(Historical Menu Qty) ÷ Observed Days by Store &amp; Day Type</code><span>Creates a comparable hourly baseline for Weekday, Friday and Weekend.</span></div>
-<div><b>02 · Component demand</b><code>Average Menu Demand × Recipe Usage per Sale</code><span>Converts expected menu sales into required preparation component quantity.</span></div>
-<div><b>03 · Batch rounding</b><code>CEILING(Component Demand ÷ 5) × 5</code><span>Rounds preparation quantity to the configured batch multiple of 5.</span></div>
-<div><b>04 · Estimated batch count</b><code>CEILING(Planned Prep Qty ÷ Batch Size)</code><span>Calculates the number of preparation batches based on component capacity.</span></div>
-<div><b>05 · Ready-to-use time</b><code>Preparation Start + Prep Duration</code><span>Sets when the component becomes available for operations.</span></div>
-<div><b>06 · Maximum use time</b><code>Ready-to-use Time + Holding Time</code><span>Defines the end of the usable holding window.</span></div></div>
-<div class="prep-formula-note"><b>Google Sheets formula examples</b><code>=CEILING(Demand_Qty/Batch_Multiple,1)*Batch_Multiple</code><code>=ROUNDUP(Planned_Prep_Qty/Batch_Size,0)</code><code>=Prep_Start+(Prep_Duration_Min/1440)</code><code>=Ready_Time+(Holding_Hours/24)</code></div></div>
-<div class="prep-section"><div class="section-label">05 / Operational Scheduling</div><h4>Translate the model into a schedule the store team can execute</h4><div class="prep-timeline">
-<div><b>H-1</b><span>Previous day</span><p>Preparation scheduled before the next operating day.</p></div><div><b>H</b><span>Current day</span><p>Preparation aligned to the current operating hour.</p></div><div><b>H+1</b><span>Following day</span><p>Overnight schedule for the next day's requirement.</p></div><div><b>LAST BATCH</b><span>Before closing</span><p>Final preparation before closing, with holding-time consideration.</p></div></div>
+<div class="prep-formula-note"><b>Google Sheets formula examples</b><code>=CEILING(Demand_Qty/Batch_Multiple,1)*Batch_Multiple</code><code>=ROUNDUP(Planned_Prep_Qty/Batch_Size,0)</code><code>=Prep_Start+(Prep_Duration_Min/1440)</code><code>=Ready_Time+(Holding_Hours/24)</code></div>
+
+<h4 style="margin-top:20px">Operational scheduling logic</h4>
+<div class="prep-timeline"><div><b>H-1</b><span>Previous day</span><p>Preparation scheduled before the next operating day.</p></div><div><b>H</b><span>Current day</span><p>Preparation aligned to the current operating hour.</p></div><div><b>H+1</b><span>Following day</span><p>Overnight schedule for the next day's requirement.</p></div><div><b>LAST BATCH</b><span>Before closing</span><p>Final preparation before closing, considering holding time.</p></div></div>
 </div>
-<div class="prep-section"><div class="section-label">06 / Dashboard &amp; Analytical Output</div><h4>One planning view from demand to execution</h4><p>One operational view connects store-level demand, preparation quantities, component filters and the execution schedule.</p><div class="prep-visual prep-main-dashboard"><button type="button" data-preview="assets/preparation-planning-overview.svg" data-title="Preparation Planning Dashboard"><img loading="lazy" src="assets/preparation-planning-overview.svg" alt="Preparation planning dashboard with hourly demand chart and component preparation schedule"><span>Enlarge dashboard ↗</span></button></div></div>
-<div class="prep-section"><div class="section-label">07 / Business Impact</div><h4>Lower overstock indicators after implementation</h4><p>The preparation planning dashboard was developed from September 2026. The supplied September and October snapshots show a reduction in both Value Over Stock and Quantity Over Stock.</p>
+
+<div class="prep-section"><div class="section-label">04 / Tools Used</div><h4>Technology stack and operational output</h4><div class="stack-grid">
+<div class="stack-item"><b>BigQuery</b><span>Historical sales extraction and hourly aggregation.</span></div>
+<div class="stack-item"><b>SQL</b><span>Transaction cleaning, standardization and demand preparation.</span></div>
+<div class="stack-item"><b>Google Sheets</b><span>Product, recipe and preparation master; batch and time calculations.</span></div>
+<div class="stack-item"><b>Looker Studio</b><span>Preparation dashboard, operational filters and schedule visibility.</span></div>
+</div>
+<p style="margin-top:14px">The dashboard connects store, day type, component, sales category and store type filters with total demand, total preparation and the detailed preparation schedule.</p>
+<div class="prep-visual prep-main-dashboard"><button type="button" data-preview="assets/preparation-planning-overview.svg" data-title="Preparation Planning Dashboard"><img loading="lazy" src="assets/preparation-planning-overview.svg" alt="Preparation planning dashboard with hourly demand chart and component preparation schedule"><span>Enlarge dashboard ↗</span></button></div>
+</div>
+
+<div class="prep-section"><div class="section-label">05 / Business Impact</div><h4>Lower overstock indicators after the September dashboard launch</h4><p>The Preparation Planning dashboard was developed from September 2026. Comparing the September and October snapshots shows a reduction in both Value Over Stock and Quantity Over Stock.</p>
 <div class="prep-impact-grid">
 <div><span>VALUE OVER STOCK</span><strong>4,255,316 → 2,197,772</strong><b>↓ 48.4%</b><small>Absolute reduction: 2,057,544</small></div>
-<div><span>QTY OVER STOCK</span><strong>55,152 → 28,889</strong><b>↓ 47.6%</b><small>Absolute reduction: 26,263 units</small></div></div>
+<div><span>QTY OVER STOCK</span><strong>55,152 → 28,889</strong><b>↓ 47.6%</b><small>Absolute reduction: 26,263 units</small></div>
+</div>
 <div class="prep-impact-chart" role="img" aria-label="September to October overstock reduction comparison">
 <div class="impact-chart-head"><b>September vs October 2026</b><div><span><i class="sep-key"></i>September</span><span><i class="oct-key"></i>October</span></div></div>
 <div class="impact-chart-row"><div class="impact-chart-label"><b>Value Over Stock</b><strong>−48.4%</strong></div><div class="impact-bars"><div class="impact-bar-track"><span class="impact-bar sep-bar" style="width:100%"></span><em>4,255,316</em></div><div class="impact-bar-track"><span class="impact-bar oct-bar" style="width:51.65%"></span><em>2,197,772</em></div></div></div>
 <div class="impact-chart-row"><div class="impact-chart-label"><b>Quantity Over Stock</b><strong>−47.6%</strong></div><div class="impact-bars"><div class="impact-bar-track"><span class="impact-bar sep-bar" style="width:100%"></span><em>55,152</em></div><div class="impact-bar-track"><span class="impact-bar oct-bar" style="width:52.38%"></span><em>28,889</em></div></div></div>
 <div class="impact-chart-footer">Both indicators declined between September and October 2026.</div>
 </div>
-<div class="prep-impact-statement"><b>Operational impact</b><p>More structured, demand-led preparation planning was followed by a lower overstock position in October compared with September 2026, supporting better product utilization and reducing excess-stock exposure.</p></div>
+<div class="prep-impact-statement"><b>Operational impact</b><p>Following the dashboard launch, the October snapshot recorded lower overstock value and quantity than September. The preparation framework supports more consistent demand-led batch decisions, production timing and holding-time control.</p></div>
 </div>
-<div class="prep-section"><div class="section-label">08 / Analytical Capabilities Demonstrated</div><div class="capability-grid">
-<div><b>SQL data preparation</b><p>Filter, clean, standardize and aggregate transaction-level sales data.</p></div>
-<div><b>Demand forecasting</b><p>Build hourly demand baselines by store and day type from historical performance.</p></div>
-<div><b>Recipe &amp; component modeling</b><p>Translate menu demand into component requirements using product usage standards.</p></div>
-<div><b>Operational optimization</b><p>Apply batch, capacity, preparation-duration and holding-time rules to production planning.</p></div>
-<div><b>Business impact measurement</b><p>Compare monthly overstock indicators and quantify absolute and percentage change.</p></div>
-<div><b>Business intelligence</b><p>Present a practical operational schedule through a filterable preparation dashboard.</p></div></div></div>
 </div><div class="dashboard-gallery" id="modalGallery">
 <div class="gallery-head"><div><div class="section-label">Dashboard Gallery</div><h3>Sales Performance Analytics Suite</h3><p>Explore eight dashboard views covering sales, target achievement, channels, store categories and product performance. Select a preview to enlarge it.</p></div><span class="tag">8 dashboard views</span></div>
 <div class="gallery-grid">
@@ -230,9 +253,9 @@ WHERE DATE(order_datetime)
 </div></div></div></div>
 <script>
 const projectData={
-sales:{title:'Sales Performance Dashboard',description:'A consolidated reporting solution designed to provide visibility into sales performance across stores, channels and products.',activities:['Monitor daily sales against targets and track achievement.','Analyze sales trends and same-store sales growth.','Review merchant contribution across offline, online and pickup channels.','Analyze menu mix and product-level sales contribution.'],value:'Improves management visibility, supports performance reviews and helps identify opportunities to close sales gaps.'},
-bucket:{title:'Store Bucket Analysis',description:'A strategic store portfolio analysis using a Sales × GP3 quadrant to segment stores, understand performance gaps and prioritize differentiated improvement actions.',activities:['Define comparable store-level sales and GP3 performance metrics.','Classify stores into Stars, Bloomers, Matures and Laggards using explicit thresholds.','Track month-to-month transitions to identify improving, stable and declining stores.','Translate segment insights into targeted actions for sales growth and GP3 recovery.'],value:'Creates a clear view of portfolio health, helps management focus support where it is most needed and provides a repeatable way to measure store movement over time.'},
-prep:{title:'Preparation Planning & Overstock Reduction',description:'A demand-led production planning method built from September 2026 historical sales across 188 stores, converting hourly menu demand into component-level preparation schedules.',activities:['Build a September 2026 hourly demand baseline across 188 stores, segmented into Weekday, Friday and Weekend.','Clean and standardize sales records, product names and store / recipe mapping before aggregation.','Convert menu demand into component requirements using recipe usage, then apply batch size and a batch multiple of 5.','Schedule preparation using ready-to-use time, maximum holding time and H-1, H, H+1 and Last Batch windows.'],value:'The September-to-October 2026 snapshots show Value Over Stock declining 48.4% and Quantity Over Stock declining 47.6%, following the introduction of structured preparation planning.'},
+sales:{title:'Sales Performance Dashboard',description:'A multi-source sales reporting solution that combines BigQuery actuals and Google Sheets targets to give management a consistent view of performance across stores, regions, channels and products.',activities:['Connect sales actuals with targets and validate reporting grain.','Analyze target achievement, SSSG, ADS and store performance.','Review merchant contribution across offline, online and pickup channels.','Explore menu mix, menu details and new-store performance.'],value:'Reduced reporting time by 80% and supported consistent performance visibility across 180+ stores.'},
+bucket:{title:'Store Bucket Analysis',description:'A Sales × GP3 quadrant framework that turns store-level performance into four actionable segments and a month-to-month portfolio movement view.',activities:['Compare sales achievement and GP3 margin at store level.','Classify stores into Stars, Bloomers, Matures and Laggards.','Track transitions between buckets across review periods.','Translate each segment into a differentiated management action plan.'],value:'Provides management with a structured way to prioritize sales growth, GP3 recovery, performance protection and store turnaround.'},
+prep:{title:'Preparation Planning & Overstock Reduction',description:'A demand-led preparation planning method built from September 2026 historical sales across 188 stores, converting hourly menu demand into component-level preparation schedules.',activities:['Build hourly demand baselines by store and day type.','Clean and standardize sales records, menu names and recipe mapping.','Convert menu demand into component requirements and batch quantities.','Schedule preparation using ready-to-use time, holding time and H-1 / H / H+1 / Last Batch windows.'],value:'September-to-October 2026 snapshots recorded a 48.4% reduction in Value Over Stock and a 47.6% reduction in Quantity Over Stock.'},
 gp3:{title:'Sales & GP3 Objective Scheme',description:'A calculation framework to determine the sales required for stores to achieve a minimum GP3 performance target.',activities:['Analyze sales and GP3 relationships.','Calculate required sales against a minimum GP3 target of 15%.','Identify performance gaps and key operational cost drivers.','Provide a basis for monitoring improvement opportunities.'],value:'Connects operational performance with financial outcomes and gives teams a measurable sales objective.'},
 manpower:{title:'Manpower & Productivity Monitoring',description:'A monitoring framework for manpower deployment and scheduling performance across store operations.',activities:['Monitor manpower planning and schedule execution.','Review SCA performance and schedule adherence.','Identify productivity and manpower gaps.','Support follow-up actions with operational teams.'],value:'Improves visibility into workforce deployment and helps store teams maintain alignment with planned schedules.'},
 ops:{title:'Daily Operations Monitoring',description:'A reporting initiative to monitor important store operational indicators and highlight areas requiring attention.',activities:['Monitor operational expenses and cost indicators.','Review complaints and product quality performance.','Track store compliance and operational issues.','Support management review through consolidated reporting.'],value:'Creates a more structured view of operational performance and helps teams prioritize follow-up actions.'}
